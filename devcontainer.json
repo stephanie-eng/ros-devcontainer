@@ -28,7 +28,8 @@
   "settings": {
     "telemetry.telemetryLevel": "off",
     "telemetry.enableTelemetry": false,
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "clang-format.executable": "clang-format-12"
   },
   "extensions": [
     "ms-python.python",
