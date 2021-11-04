@@ -1,4 +1,5 @@
-FROM osrf/ros:foxy-desktop
+ARG ROS_VERSION
+FROM osrf/ros:${ROS_VERSION}-desktop
 
 ARG WORKSPACE
 ARG USERNAME=user

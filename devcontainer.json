@@ -4,6 +4,7 @@
   "dockerFile": "Dockerfile",
   "build": {
     "args": {
+      "ROS_VERSION": "foxy",
       "WORKSPACE": "${containerWorkspaceFolder}"
     }
   },
@@ -21,6 +22,7 @@
     "--volume=/tmp/.X11-unix:/tmp/.X11-unix",
     "--volume=/dev/bus/usb:/dev/bus/usb",
     "--gpus=all",
+    "--env=ROS_DISTRO=foxy",
   ],
   "containerEnv": {
     "DISPLAY": "${localEnv:DISPLAY}"
