@@ -38,6 +38,7 @@
     "ms-iot.vscode-ros",
     "ms-vscode.cpptools",
     "redhat.vscode-yaml",
-    "twxs.cmake"
+    "twxs.cmake",
+    "notskm.clang-tidy"
   ]
 }

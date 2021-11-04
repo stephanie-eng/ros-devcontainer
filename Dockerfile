@@ -15,6 +15,8 @@ RUN set -xe; \
     apt-get update; \
     apt-get -y dist-upgrade; \
     apt-get install -y \
+        clang-tidy \
+        clang-tools \
         clang-format-10 \
         less \
         mesa-utils \
