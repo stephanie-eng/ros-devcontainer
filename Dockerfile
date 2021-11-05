@@ -21,7 +21,10 @@ RUN set -xe; \
         less \
         mesa-utils \
         nano \
+        python3-pip \
+        python3-sphinx \
         wget \
+        xdg-utils \
         zsh \
     ; \
     echo "export CONTAINER_WORKSPACE_FOLDER=${WORKSPACE}" > /etc/default/container-workspace-folder; \
