@@ -16,6 +16,7 @@
     "--env=DISPLAY",
     "--env=QT_X11_NO_MITSHM=1",
     "--cap-add=SYS_PTRACE", // debugger
+    "--privileged",
     "--security-opt=seccomp:unconfined",
     "--security-opt=apparmor:unconfined",
     "--device=/dev/dri",
