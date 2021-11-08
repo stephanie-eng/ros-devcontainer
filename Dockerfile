@@ -27,6 +27,7 @@ RUN set -xe; \
         xdg-utils \
         zsh \
     ; \
+    pip3 install pre-commit ; \
     echo "export CONTAINER_WORKSPACE_FOLDER=${WORKSPACE}" > /etc/default/container-workspace-folder; \
     chsh -s /bin/zsh $USERNAME
 
