@@ -32,7 +32,7 @@
     "telemetry.telemetryLevel": "off",
     "telemetry.enableTelemetry": false,
     "editor.formatOnSave": true,
-    "clang-format.executable": "clang-format-12"
+    "clang-format.executable": "clang-format-10"
   },
   "extensions": [
     "ms-python.python",
