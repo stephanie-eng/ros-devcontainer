@@ -15,15 +15,20 @@ RUN set -xe; \
     apt-get update; \
     apt-get -y dist-upgrade; \
     apt-get install -y \
+        ccache \
         clang-tidy \
         clang-tools \
         clang-format-10 \
         less \
         mesa-utils \
         nano \
+        python3-pip \
+        python3-sphinx \
         wget \
+        xdg-utils \
         zsh \
     ; \
+    pip3 install pre-commit ; \
     echo "export CONTAINER_WORKSPACE_FOLDER=${WORKSPACE}" > /etc/default/container-workspace-folder; \
     chsh -s /bin/zsh $USERNAME
 
@@ -32,4 +37,7 @@ COPY ros-activate.sh /etc/profile.d/ros-activate.sh
 USER $USERNAME
 COPY .zshrc /home/$USERNAME/.zshrc
 
+# RUN set -xe; \
+#     colcon mixin add default https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml; \
+#     colcon mixin update default
 
