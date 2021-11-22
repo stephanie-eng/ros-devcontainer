@@ -10,3 +10,5 @@ fi
 if [ -f /opt/ros/$ROS_DISTRO/setup.zsh ]; then
   . /opt/ros/$ROS_DISTRO/setup.zsh
 fi
+
+export PATH=/usr/lib/ccache:${PATH}

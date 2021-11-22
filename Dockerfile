@@ -15,6 +15,7 @@ RUN set -xe; \
     apt-get update; \
     apt-get -y dist-upgrade; \
     apt-get install -y \
+        ccache \
         clang-tidy \
         clang-tools \
         clang-format-10 \
@@ -36,4 +37,7 @@ COPY ros-activate.sh /etc/profile.d/ros-activate.sh
 USER $USERNAME
 COPY .zshrc /home/$USERNAME/.zshrc
 
+# RUN set -xe; \
+#     colcon mixin add default https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml; \
+#     colcon mixin update default
 
