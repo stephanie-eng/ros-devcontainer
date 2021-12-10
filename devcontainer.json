@@ -4,13 +4,12 @@
   "dockerFile": "Dockerfile",
   "build": {
     "args": {
-      "ROS_VERSION": "galactic",
+      "ROS_VERSION": "rolling",
       "WORKSPACE": "${containerWorkspaceFolder}"
     }
   },
   "remoteUser": "user",
   "runArgs": [
-    "--network=host",
     "--env=NVIDIA_VISIBLE_DEVICES=all",
     "--env=NVIDIA_DRIVER_CAPABILITIES=all",
     "--env=DISPLAY",
@@ -24,7 +23,7 @@
     "--volume=/dev/bus/usb:/dev/bus/usb",
     "--volume=${localWorkspaceFolder}/ccache:/home/user/.ccache", // May need to create this manually
     "--gpus=all",
-    "--env=ROS_DISTRO=galactic",
+    "--env=ROS_DISTRO=rolling",
   ],
   "containerEnv": {
     "DISPLAY": "${localEnv:DISPLAY}"
