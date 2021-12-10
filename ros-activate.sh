@@ -12,3 +12,4 @@ if [ -f /opt/ros/$ROS_DISTRO/setup.zsh ]; then
 fi
 
 export PATH=/usr/lib/ccache:${PATH}
+export ROS_DOMAIN_ID=11
