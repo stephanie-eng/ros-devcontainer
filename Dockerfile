@@ -34,7 +34,10 @@ RUN set -xe; \
 
 COPY ros-activate.sh /etc/profile.d/ros-activate.sh
 
-USER $USERNAME
+ENV USERNAME=$USERNAME
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+
 COPY .zshrc /home/$USERNAME/.zshrc
 
 # RUN set -xe; \
