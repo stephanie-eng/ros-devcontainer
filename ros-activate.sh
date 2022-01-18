@@ -13,3 +13,4 @@ fi
 
 export PATH=/usr/lib/ccache:${PATH}
 export ROS_DOMAIN_ID=11
+export RCUTILS_COLORIZED_OUTPUT=1
