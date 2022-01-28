@@ -1,10 +1,10 @@
 // See https://aka.ms/vscode-remote/devcontainer.json for format details.
 {
-  "name": "ros2",
+  "name": "ros",
   "dockerFile": "Dockerfile",
   "build": {
     "args": {
-      "ROS_VERSION": "rolling",
+      "ROS_VERSION": "melodic",
       "WORKSPACE": "${containerWorkspaceFolder}"
     }
   },
@@ -23,7 +23,7 @@
     "--volume=/dev/bus/usb:/dev/bus/usb",
     "--volume=${localWorkspaceFolder}/ccache:/home/user/.ccache", // May need to create this manually
     "--gpus=all",
-    "--env=ROS_DISTRO=rolling",
+    "--env=ROS_DISTRO=melodic",
   ],
   "overrideCommand": false,
   "containerEnv": {
