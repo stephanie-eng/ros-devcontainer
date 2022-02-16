@@ -95,7 +95,7 @@ setopt pushd_ignore_dups
 setopt no_beep
 
 # History configurations
-HISTFILE=$HOME/.zsh_history
+# HISTFILE=$HOME/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
 alias history="fc -il 1"
