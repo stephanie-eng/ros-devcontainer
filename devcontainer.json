@@ -4,7 +4,7 @@
   "dockerFile": "Dockerfile",
   "build": {
     "args": {
-      "ROS_VERSION": "rolling",
+      "ROS_VERSION": "foxy",
       "WORKSPACE": "${containerWorkspaceFolder}"
     }
   },
@@ -23,7 +23,7 @@
     "--volume=/dev/bus/usb:/dev/bus/usb",
     "--volume=${localWorkspaceFolder}/ccache:/home/user/.ccache", // May need to create this manually
     "--gpus=all",
-    "--env=ROS_DISTRO=rolling",
+    "--env=ROS_DISTRO=foxy",
   ],
   "overrideCommand": false,
   "containerEnv": {
