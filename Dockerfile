@@ -18,7 +18,7 @@ RUN set -xe; \
         ccache \
         clang-tidy \
         clang-tools \
-        clang-format-10 \
+        clang-format-12 \
         less \
         mesa-utils \
         nano \
