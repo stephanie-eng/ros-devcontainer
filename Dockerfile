@@ -19,7 +19,7 @@ RUN set -xe; \
         ccache \
         clang-tidy \
         clang-tools \
-        clang-format-12 \
+        clang-format-10 \
         gdb \
         less \
         mesa-utils \
