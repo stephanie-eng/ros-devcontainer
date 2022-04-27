@@ -40,7 +40,3 @@ ENTRYPOINT ["/entrypoint.sh"]
 
 COPY .zshrc /home/$USERNAME/.zshrc
 
-# RUN set -xe; \
-#     colcon mixin add default https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml; \
-#     colcon mixin update default
-

@@ -1,19 +1,25 @@
 # ros-devcontainer
 
-Paste these files into .devcontainer
+To use this devcontainer, clone this repository into your workspace, and rename the folder to `.devcontainer`. In the case where this repository will be used as part of another git repository, add the .devcontainer folder to .git/info/exclude (which works like a local .gitignore to avoid having these files included.
 
-It's likely this will be used as part of another git repository. To avoid having this included, add the .devcontainer folder to .git/info/exclude (which works like a local .gitignore)
+## ROS version
 
-Note: for joystick, ros2 uses /dev/input/event*, which the default user does not have read access to. To correct the user permissions, ros-activate.sh finds the group that owns the file, and adds the current user to that group.
+To use a different ROS version, change the `ROS_VERSION` (in build args) and the `ROS_DISTRO` (in run args) in `devcontainer.json`. For conveniece, branches exist for the following:
+ - Melodic
+ - Galactic
+ - Foxy
+ - Rolling (master)
 
-Note: Create the ccache folder manually from outside the container, or suffer user permission errors.
-If Docker creates the folder it will be owned by root:root and ccache will not have permission to run. To fix this, make the ccache folder in the workspace before using or:
+## ros-activate.sh
+This file is copied to the container's `/etc/profile.d` for convenience. It sets up the ROS environment and some helpful environmental variables.
 
-```
-sudo chown stephanie:stephanie ccache
-```
+## entrypoint.sh
+This is the script that runs as the Docker entrypoint. It modifies some user permissions to allow the use a joystick in the container. ROS2 uses `/dev/input/event*` for the joystick - the default user in the container does not have read access to this. To correct the user permissions, `ros-activate.sh` finds the group that owns the file, and adds the current user to that group. It also creates some useful 
 
-from outside the container, or:
+## Notes
+Create the ccache folder manually from outside the container, or suffer user permission errors.
+
+If Docker creates the folder it will be owned by root:root and ccache will not have permission to run. To fix this, make the ccache folder in the workspace before using or run the following command from inside the container.
 
 ```
 sudo chown user:user /home/user/.ccache
