@@ -26,17 +26,13 @@ RUN set -xe; \
         python3-sphinx \
         wget \
         xdg-utils \
-        zsh \
     ; \
     pip3 install pre-commit ; \
     echo "export CONTAINER_WORKSPACE_FOLDER=${WORKSPACE}" > /etc/default/container-workspace-folder; \
-    chsh -s /bin/zsh $USERNAME
+    chsh -s /bin/bash $USERNAME
 
 COPY ros-activate.sh /etc/profile.d/ros-activate.sh
 
 ENV USERNAME=$USERNAME
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
-
-COPY .zshrc /home/$USERNAME/.zshrc
-
