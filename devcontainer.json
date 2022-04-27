@@ -33,7 +33,7 @@
     "telemetry.telemetryLevel": "off",
     "telemetry.enableTelemetry": false,
     "editor.formatOnSave": true,
-    "clang-format.executable": "clang-format-12",
+    "clang-format.executable": "clang-format-10",
     "clang-format.language.cpp.style": "file"
   },
   "extensions": [
