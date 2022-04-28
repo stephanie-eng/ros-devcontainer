@@ -18,7 +18,7 @@ Install VSCode and the "Remote Containers Extension". Open this `.devcontainer` 
 This file is copied to the container's `/etc/profile.d` for convenience. It sets up the ROS environment and some helpful environmental variables.
 
 ## entrypoint.sh
-This is the script that runs as the Docker entrypoint. It modifies some user permissions to allow the use a joystick in the container. ROS2 uses `/dev/input/event*` for the joystick - the default user in the container does not have read access to this. To correct the user permissions, `ros-activate.sh` finds the group that owns the file, and adds the current user to that group. It also creates some useful environment variables.
+This is the script that runs as the Docker entrypoint. It modifies some user permissions to allow the use a joystick in the container. ROS2 uses `/dev/input/event*` for the joystick - the default user in the container does not have read access to this. To correct the user permissions, `ros-activate.sh` finds the group that owns the file, and adds the current user to that group.
 
 ## Notes
 Create the ccache folder manually from outside the container, or suffer user permission errors.
