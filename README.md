@@ -12,11 +12,16 @@ To use a different ROS version, change the `ROS_VERSION` (in build args) and the
 
 ## Quick Start with VSCode
 
-Install VSCode and the "Remote Containers Extension". Open this `.devcontainer` folder. VSCode should prompt if you would like to re-open the container. Do so, and you are good to go. You can open a terminal with ``Ctrl + ` ``.
+Install VSCode and the "Remote Containers Extension". Open the parent folder of `.devcontainer`. VSCode should prompt if you would like to re-open the container. Do so, and you are good to go. You can open a terminal with ``Ctrl + ` ``.
 
 ## Working from the container
 
-The parent folder of this `.devcontainer` is shared into the container's workspace, so put your source files there. You can also get there with the CONTAINER_WORKSPACE_FOLDER environment variable (`cd $CONTAINER_WORKSPACE_FOLDER`).
+The parent folder of this `.devcontainer` is shared into the container's workspace, so put your source files there. You can also get there with the CONTAINER_WORKSPACE_FOLDER environment variable (`cd $CONTAINER_WORKSPACE_FOLDER`). The typical directory structure looks like this:
+
+```
+    workspace/.devcontainer
+    workspace/src/your_code_here
+```
 
 ## ros-activate.sh
 This file is copied to the container's `/etc/profile.d` for convenience. It sets up the ROS environment and some helpful environmental variables.
