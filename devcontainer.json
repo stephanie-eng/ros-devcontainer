@@ -34,7 +34,8 @@
     "telemetry.enableTelemetry": false,
     "editor.formatOnSave": true,
     "clang-format.executable": "clang-format-12",
-    "clang-format.language.cpp.style": "file"
+    "clang-format.language.cpp.style": "file",
+    "extensions.ignoreRecommendations": true
   },
   "extensions": [
     "ms-python.python",
