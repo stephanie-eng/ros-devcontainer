@@ -22,6 +22,8 @@ RUN set -xe; \
         less \
         mesa-utils \
         nano \
+        python3-catkin-tools \
+        python-is-python3 \
         python3-pip \
         python3-sphinx \
         wget \
