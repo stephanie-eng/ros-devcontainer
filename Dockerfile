@@ -26,6 +26,7 @@ RUN set -xe; \
         nano \
         python3-pip \
         python3-sphinx \
+        ros-${ROS_VERSION}-rmw-cyclonedds-cpp \
         wget \
         xdg-utils \
     ; \

@@ -7,3 +7,4 @@ fi
 
 export PATH=/usr/lib/ccache:${PATH}
 export RCUTILS_COLORIZED_OUTPUT=1
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
