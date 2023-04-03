@@ -15,12 +15,12 @@ RUN set -xe; \
 RUN set -xe; \
     export DEBIAN_FRONTEND=noninteractive; \
     apt-get update; \
-    apt-get -y dist-upgrade; \
     apt-get install -y \
         ccache \
         clang-tidy \
         clang-tools \
         clang-format-12 \
+        gdb \
         less \
         mesa-utils \
         nano \

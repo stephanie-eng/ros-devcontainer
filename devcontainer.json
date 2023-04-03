@@ -8,42 +8,46 @@
       "WORKSPACE": "${containerWorkspaceFolder}"
     }
   },
-  "remoteUser": "user",
+  "remoteUser": "user", // Container user
   "runArgs": [
-    "--env=NVIDIA_VISIBLE_DEVICES=all",
-    "--env=NVIDIA_DRIVER_CAPABILITIES=all",
-    "--env=DISPLAY",
-    "--env=QT_X11_NO_MITSHM=1",
-    "--cap-add=SYS_PTRACE", // debugger
-    "--privileged",
+    "--cap-add=SYS_PTRACE", // For performance debugging
     "--security-opt=seccomp:unconfined",
     "--security-opt=apparmor:unconfined",
-    "--device=/dev/dri",
-    "--volume=/tmp/.X11-unix:/tmp/.X11-unix",
-    "--volume=/dev/bus/usb:/dev/bus/usb",
+    "--device=/dev/dri", // For AMD devices (not tested)
+    "--volume=/tmp/.X11-unix:/tmp/.X11-unix", // Required for graphics
+    "--privileged", // Required for joystick
+    "--volume=/dev/bus/usb:/dev/bus/usb", // For USB (ex. joy)
     "--volume=${localWorkspaceFolder}/ccache:/home/user/.ccache", // May need to create this manually
-    "--gpus=all",
-    "--net=host",
+    "--gpus=all", // Maybe replace with runtime=nvidia
+    "--net=host", // Use host network
+    // "--memory=16g", // Memory limit
   ],
   "overrideCommand": false,
   "containerEnv": {
-    "DISPLAY": "${localEnv:DISPLAY}"
+    "DISPLAY": "${localEnv:DISPLAY}",
+    "NVIDIA_VISIBLE_DEVICES": "all", // Maybe replace with runtime=nvidia
+    "NVIDIA_DRIVER_CAPABILITIES": "all", // Maybe replace with runtime=nvidia
+    "QT_X11_NO_MITSHM": "1" // Required for QT apps like RViz, otherwise they may freeze
   },
-  "settings": {
-    "telemetry.telemetryLevel": "off",
-    "telemetry.enableTelemetry": false,
-    "editor.formatOnSave": true,
-    "clang-format.executable": "clang-format-12",
-    "clang-format.language.cpp.style": "file",
-    "extensions.ignoreRecommendations": true
-  },
-  "extensions": [
-    "ms-python.python",
-    "ms-iot.vscode-ros",
-    "ms-vscode.cpptools",
-    "redhat.vscode-yaml",
-    "twxs.cmake",
-    "notskm.clang-tidy",
-    "marklarah.pre-commit-vscode"
-  ]
+  "init": true, // Use init process that respects signal handlers
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "telemetry.telemetryLevel": "off",
+        "telemetry.enableTelemetry": false,
+        "editor.formatOnSave": true,
+        "clang-format.executable": "clang-format-12",
+        "clang-format.language.cpp.style": "file",
+        "extensions.ignoreRecommendations": true
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-iot.vscode-ros",
+        "ms-vscode.cpptools",
+        "redhat.vscode-yaml",
+        "twxs.cmake",
+        "notskm.clang-tidy",
+      ]
+    }
+  }
 }
