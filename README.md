@@ -4,7 +4,7 @@ To use this devcontainer, clone this repository into your workspace, and rename 
 
 ## ROS version
 
-To use a different ROS version, change the `ROS_VERSION` (in build args) and the `ROS_DISTRO` (in run args) in `devcontainer.json`. For conveniece, branches exist for the following:
+To use a different ROS version, change the `ROS_VERSION` (in build args) in `devcontainer.json`. For conveniece, branches exist for the following:
  - Melodic
  - Galactic
  - Foxy
